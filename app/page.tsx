@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main id="main" >
@@ -10,9 +12,9 @@ export default function Home() {
             <p>
               Talk about the other services they do with keywords and locations where they serve.  Try to make this 2-3 lines tall.
             </p>
-            <a className="button-solid" href="/contact.html" target="_blank" rel="noopener">
-              Main Call To Action
-            </a>
+            <Link className="button-solid" href="/contact" target="_blank" rel="noopener">
+              Get Free Quote
+            </Link>
           </div>
         </div>
         <picture>
@@ -92,7 +94,7 @@ export default function Home() {
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe laborum nam consequuntur porro inventore odio? Quod autem alias ratione cum reiciendis qui quaerat, sequi voluptatum voluptatibus, iusto itaque sed ullam. Quis, maiores corrupti. Rerum quo laudantium vero magnam tempora!
             </p>
-            <a className="button-solid" href="/about.html">More About Us</a>
+            <Link className="button-solid" href="/about">More About Us</Link>
           </div>
           <picture className="image-box">
             <source media="(max-width: 600px)" srcSet="/images/cabinets2-m.jpg" />
@@ -137,7 +139,7 @@ export default function Home() {
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe laborum nam consequuntur porro inventore odio? Quod autem alias ratione cum reiciendis qui quaerat, sequi voluptatum voluptatibus, iusto itaque sed ullam. Quis, maiores corrupti. Rerum quo laudantium vero magnam tempora!
             </p>
-            <a className="button-solid" href="/contact.html">Get Free Quote</a>
+            <Link className="button-solid" href="/contact">Get Free Quote</Link>
           </div>
           <picture className="image-box">
             <source media="(max-width: 600px)" srcSet="/images/cabinets2-m.jpg" />
@@ -154,7 +156,7 @@ export default function Home() {
           <p>
             Say something catchy, informative, and encouraging to click the button to go to the contact page.  I like to add these to the bottom of all pages.
           </p>
-          <a href="/contact.html" className="button-solid">Get an Estimate Now</a>
+          <Link href="/contact" className="button-solid">Get an Estimate Now</Link>
         </div>
         <picture>
           <source media="(max-width: 600px)" srcSet="/images/cabinets2-m.webp" />
