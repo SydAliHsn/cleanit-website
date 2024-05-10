@@ -1,0 +1,110 @@
+/*-- -------------------------- -->
+<---      Core Dark Styles      -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0em) {
+  :root {
+    --dark: #082032;
+    --medium: #2c394b;
+    --accent: #334756;
+  }
+
+  body.dark-mode {
+    background-color: var(--dark);
+
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #fff;
+    }
+
+    .light {
+      display: none;
+    }
+
+    .dark {
+      display: block !important;
+    }
+  }
+
+  .dark {
+    display: none;
+  }
+}
+
+/*-- -------------------------- -->
+  <---      Dark Mode Toggle      -->
+  <--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0em) {
+  body.dark-mode #dark-mode-toggle {
+    .sun {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    .moon {
+      transform: translate(-50%, -150%);
+      opacity: 0;
+    }
+  }
+
+  #dark-mode-toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3.75em;
+    width: 3em;
+    height: 3em;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+
+    img,
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1.5625em;
+      height: 1.5625em;
+      pointer-events: none;
+    }
+
+    .moon {
+      z-index: 2;
+      transition: transform 0.3s, opacity 0.3s, fill 0.3s;
+      fill: #000;
+    }
+
+    .sun {
+      z-index: 1;
+      transform: translate(-50%, 100%);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 64em) {
+  #dark-mode-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-left: 1.875em;
+    margin-bottom: 0em;
+
+    .moon {
+      fill: #fff;
+    }
+  }
+}

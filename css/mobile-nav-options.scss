@@ -1,0 +1,460 @@
+/* Mobile - Top Drop Down */
+@media only screen and (max-width: 1023px) {
+  #navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    height: auto;
+
+    .background-color-div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      width: 100%;
+      height: 100%;
+      -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .container {
+      padding: 0.8125em 0;
+      width: 96%;
+    }
+
+    .logo {
+      display: inline-block;
+      height: 1.875em;
+      width: auto;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+
+      .light {
+        display: none;
+      }
+
+      .dark {
+        display: block;
+      }
+    }
+
+    .hamburger-menu {
+      position: absolute;
+      right: 0em;
+      border: none;
+      height: 3em;
+      width: 3em;
+      z-index: 100;
+      display: block;
+      background: transparent;
+      padding: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: top 0.3s;
+      transition: top 0.3s;
+
+      span {
+        height: 2px;
+        width: 1.875em;
+        background-color: #000;
+        display: block;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          height: 2px;
+          width: 80%;
+          background: #000;
+          opacity: 1;
+          top: -6px;
+          left: 0;
+          -webkit-transition: width 0.3s, left 0.3s, top 0.3s, -webkit-transform 0.5s;
+          transition: width 0.3s, left 0.3s, top 0.3s, -webkit-transform 0.5s;
+          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.5s;
+          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.5s, -webkit-transform 0.5s;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          height: 2px;
+          width: 80%;
+          background: #000;
+          opacity: 1;
+          top: 6px;
+          left: 0;
+          -webkit-transition: width 0.3s, left 0.3s, top 0.3s, -webkit-transform 0.3s;
+          transition: width 0.3s, left 0.3s, top 0.3s, -webkit-transform 0.3s;
+          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.3s;
+          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.3s, -webkit-transform 0.3s;
+        }
+      }
+
+      &.clicked span {
+        background-color: transparent;
+
+        &:before {
+          width: 100%;
+          -webkit-transform: translate(-50%, -50%) rotate(225deg);
+          transform: translate(-50%, -50%) rotate(225deg);
+          left: 50%;
+          top: 50%;
+        }
+
+        &:after {
+          width: 100%;
+          -webkit-transform: translate(-50%, -50%) rotate(-225deg);
+          transform: translate(-50%, -50%) rotate(-225deg);
+          left: 50%;
+          top: 50%;
+        }
+      }
+    }
+
+    #navbar-menu {
+      position: fixed;
+      right: 0;
+      padding: 0;
+      width: 100%;
+      border-radius: 0 0 0.375em 0.375em;
+      z-index: -1;
+      overflow: hidden;
+      -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      background-color: #fff;
+      top: 4em;
+      padding-top: 0;
+      height: 0;
+      -webkit-transition: height 0.3s, padding-top 0.3s, top 0.3s;
+      transition: height 0.3s, padding-top 0.3s, top 0.3s;
+
+      ul {
+        padding: 0;
+        -webkit-perspective: 700px;
+        perspective: 700px;
+
+        li {
+          list-style: none;
+          margin-bottom: 1.5em;
+          text-align: center;
+          -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          opacity: 0;
+          -webkit-transform: translateY(-0.4375em) rotateX(90deg);
+          transform: translateY(-0.4375em) rotateX(90deg);
+          -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+          transition: opacity 0.5s, -webkit-transform 0.5s;
+          transition: opacity 0.5s, transform 0.5s;
+          transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+
+          &:nth-of-type(1) {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+          }
+
+          &:nth-of-type(2) {
+            -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+          }
+
+          &:nth-of-type(3) {
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+          }
+
+          &:nth-of-type(4) {
+            -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+          }
+
+          &:nth-of-type(5) {
+            -webkit-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+          }
+
+          a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #000;
+            font-size: 1.1875em;
+            text-align: center;
+            display: inline-block;
+            position: relative;
+            font-weight: bold;
+
+            &.active:before {
+              content: '';
+              position: absolute;
+              display: block;
+              height: 0.42105263em;
+              background: var(--primary);
+              opacity: 1;
+              bottom: 0.26315789em;
+              border-radius: 0.21052632em;
+              left: -0.31578947em;
+              right: -0.31578947em;
+              z-index: -1;
+            }
+          }
+        }
+      }
+
+      &.open {
+        height: 19.125em;
+        padding-top: 1.25em;
+        z-index: -100;
+
+        ul li {
+          opacity: 1;
+          -webkit-transform: translateY(0) rotateX(0);
+          transform: translateY(0) rotateX(0);
+        }
+      }
+    }
+  }
+}
+
+/* Mobile - Side Pop Out */
+@media only screen and (max-width: 1023px) {
+  #navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    height: auto;
+
+    .background-color-div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      width: 100%;
+      height: 100%;
+      -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .container {
+      padding: 0.8125em 0;
+      width: 96%;
+    }
+
+    .logo {
+      display: inline-block;
+      height: 1.875em;
+      width: auto;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+
+      .light {
+        display: none;
+      }
+
+      .dark {
+        display: block;
+      }
+    }
+
+    .hamburger-menu {
+      position: absolute;
+      right: 0em;
+      border: none;
+      height: 3em;
+      width: 3em;
+      z-index: 100;
+      display: block;
+      background: transparent;
+      padding: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: top 0.3s;
+      transition: top 0.3s;
+
+      span {
+        height: 2px;
+        width: 1.875em;
+        background-color: #000;
+        display: block;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          height: 2px;
+          width: 80%;
+          background: #000;
+          opacity: 1;
+          top: -6px;
+          left: 0;
+          -webkit-transition: width 0.3s, left 0.3s, top 0.3s, -webkit-transform 0.5s;
+          transition: width 0.3s, left 0.3s, top 0.3s, -webkit-transform 0.5s;
+          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.5s;
+          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.5s, -webkit-transform 0.5s;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          height: 2px;
+          width: 80%;
+          background: #000;
+          opacity: 1;
+          top: 6px;
+          left: 0;
+          -webkit-transition: width 0.3s, left 0.3s, top 0.3s, -webkit-transform 0.3s;
+          transition: width 0.3s, left 0.3s, top 0.3s, -webkit-transform 0.3s;
+          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.3s;
+          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.3s, -webkit-transform 0.3s;
+        }
+      }
+
+      &.clicked span {
+        background-color: transparent;
+
+        &:before {
+          width: 100%;
+          -webkit-transform: translate(-50%, -50%) rotate(225deg);
+          transform: translate(-50%, -50%) rotate(225deg);
+          left: 50%;
+          top: 50%;
+        }
+
+        &:after {
+          width: 100%;
+          -webkit-transform: translate(-50%, -50%) rotate(-225deg);
+          transform: translate(-50%, -50%) rotate(-225deg);
+          left: 50%;
+          top: 50%;
+        }
+      }
+    }
+
+    #navbar-menu {
+      position: fixed;
+      right: 0;
+      padding: 0;
+      height: 100%;
+      border-radius: 0 0 0.375em 0.375em;
+      z-index: -1;
+      overflow: hidden;
+      -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      background-color: #fff;
+      top: 4em;
+      padding-top: 0;
+      width: 0em;
+      -webkit-transition: width 0.3s;
+      transition: width 0.3s;
+
+      ul {
+        padding: 0;
+        -webkit-perspective: 700px;
+        perspective: 700px;
+        padding-right: 1.25em;
+        padding-top: 3.125em;
+
+        li {
+          list-style: none;
+          margin-bottom: 1.5em;
+          text-align: right;
+          -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          opacity: 0;
+          -webkit-transform: translateY(-0.4375em) rotateX(0deg);
+          transform: translateY(-0.4375em) rotateX(0deg);
+          -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+          transition: opacity 0.5s, -webkit-transform 0.5s;
+          transition: opacity 0.5s, transform 0.5s;
+          transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+
+          &:nth-of-type(1) {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+          }
+
+          &:nth-of-type(2) {
+            -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+          }
+
+          &:nth-of-type(3) {
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+          }
+
+          &:nth-of-type(4) {
+            -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+          }
+
+          &:nth-of-type(5) {
+            -webkit-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+          }
+
+          a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #000;
+            font-size: 1.1875em;
+            text-align: center;
+            display: inline-block;
+            position: relative;
+            font-weight: bold;
+
+            &.active:before {
+              content: '';
+              position: absolute;
+              display: block;
+              height: 0.42105263em;
+              background: var(--primary);
+              opacity: 1;
+              bottom: 0.26315789em;
+              border-radius: 0.21052632em;
+              left: -0.31578947em;
+              right: -0.31578947em;
+              z-index: -1;
+            }
+          }
+        }
+      }
+
+      &.open {
+        height: 15.625em;
+        z-index: -100;
+
+        ul li {
+          opacity: 1;
+          -webkit-transform: translateY(0) rotateX(0);
+          transform: translateY(0) rotateX(0);
+        }
+      }
+    }
+  }
+}
