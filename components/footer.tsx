@@ -2,7 +2,7 @@ import React from 'react';
 
 import Link from 'next/link';
 
-const footer = (props: {}): JSX.Element => {
+const Footer = (props: {}): JSX.Element => {
     return <footer id="footer">
         <div className="container">
             <div className="left-section">
@@ -45,4 +45,4 @@ const footer = (props: {}): JSX.Element => {
     </footer>
 };
 
-export default footer;
+export default Footer;

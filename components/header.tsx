@@ -20,7 +20,7 @@ const links = [
 ];
 
 
-const header = (props: {}): JSX.Element => {
+const Header = (props: {}): JSX.Element => {
     const [navState, setNavState] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
     const pathname = usePathname();
@@ -114,4 +114,4 @@ const header = (props: {}): JSX.Element => {
     </div >;
 };
 
-export default header;
+export default Header;
