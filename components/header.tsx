@@ -87,7 +87,7 @@ const Header = (props: {}): JSX.Element => {
             <nav id="navbar-menu" className={navState ? 'open' : ''}>
                 <ul>
                     {links.map(({ name, link }) =>
-                        <li><Link key={link} className={pathname === link ? 'active' : ''} href={link}>{name}</Link></li>)}
+                        <li key={link}><Link className={pathname === link ? 'active' : ''} href={link}>{name}</Link></li>)}
                 </ul>
             </nav>
 
