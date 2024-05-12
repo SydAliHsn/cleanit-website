@@ -5,7 +5,6 @@ import { motion, AnimatePresence, Spring } from "framer-motion";
 import { PropsWithChildren } from "react";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useContext, useRef } from "react";
-import Image from "next/image";
 import LogoLight from "./svg/logo-light";
 
 function FrozenRouter(props: PropsWithChildren<{}>) {
