@@ -6,6 +6,7 @@ import { PropsWithChildren } from "react";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useContext, useRef } from "react";
 import Image from "next/image";
+import LogoLight from "./svg/logo-light";
 
 function FrozenRouter(props: PropsWithChildren<{}>) {
     const context = useContext(LayoutRouterContext);
@@ -39,13 +40,15 @@ const AnimatePageTransition = (props: PropsWithChildren<{}>) => {
                     position: "fixed",
                     width: "100vw",
                     zIndex: 999999,
+                    display: 'grid',
+                    placeItems: 'center',
                     bottom: 0,
                 }}
                 transition={transitionSpringPhysics}
                 animate={{ height: "0vh" }}
                 exit={{ height: "100vh" }}
             >
-                <Image fill={true} src={'/images/logo-light.svg'} alt="CleanIt" />
+                <LogoLight style={{ maxHeight: '100%', padding: '2rem' }} />
             </motion.div>
 
             <motion.div
@@ -54,13 +57,15 @@ const AnimatePageTransition = (props: PropsWithChildren<{}>) => {
                     position: "fixed",
                     width: "100vw",
                     zIndex: 999999,
+                    display: 'grid',
+                    placeItems: 'center',
                     top: 0,
                 }}
                 transition={transitionSpringPhysics}
                 initial={{ height: "100vh" }}
                 animate={{ height: "0vh", transition: { delay: 0.2 } }}
             >
-                <Image fill={true} src={'/images/logo-light.svg'} alt="CleanIt" />
+                <LogoLight style={{ maxHeight: '100%', padding: '2rem' }} />
             </motion.div>
             <FrozenRouter>
                 {props.children}
