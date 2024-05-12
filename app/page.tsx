@@ -1,6 +1,8 @@
-import Image from "next/image";
+'use client';
 
+import Image from "next/image";
 import Link from "next/link";
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -26,7 +28,12 @@ export default function Home() {
 
       <section id="services" className="services">
         {/* <!-- Get Icons From flaticon.com --> */}
-        <div className="card">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.4 }}
+          className="card">
           <picture>
             <img aria-hidden="true" decoding="async" src="/images/service1.svg" alt="appliance" width="48" height="48" />
           </picture>
@@ -34,8 +41,13 @@ export default function Home() {
           <p>
             Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.
           </p>
-        </div>
-        <div className="card">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
+          className="card">
           <picture>
             <img aria-hidden="true" decoding="async" src="/images/service2.svg" alt="appliance" width="48" height="48" />
           </picture>
@@ -43,8 +55,13 @@ export default function Home() {
           <p>
             Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.
           </p>
-        </div>
-        <div className="card">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          viewport={{ once: true, amount: 0.4 }}
+          className="card">
           <picture>
             <img aria-hidden="true" decoding="async" src="/images/service3.svg" alt="appliance" width="48" height="48" />
           </picture>
@@ -52,7 +69,7 @@ export default function Home() {
           <p>
             Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* <!-- ============================================ -->
@@ -61,7 +78,12 @@ export default function Home() {
 
       <section id="sidebyside" className="sidebyside">
         <div className="container">
-          <div className="content">
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="content">
             <h2 className="title">Safest and reliable cleaning for all your needs</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam debitis dolor consectetur dolorem inventore modi tenetur ex odit, amet beatae ad, doloribus tempora quae ab nulla minus temporibus at veritatis!
@@ -95,18 +117,28 @@ export default function Home() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe laborum nam consequuntur porro inventore odio? Quod autem alias ratione cum reiciendis qui quaerat, sequi voluptatum voluptatibus, iusto itaque sed ullam. Quis, maiores corrupti. Rerum quo laudantium vero magnam tempora!
             </p>
             <Link className="button-solid" href="/about">More About Us</Link>
-          </div>
-          <picture className="image-box">
+          </motion.div>
+          <motion.picture
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="image-box">
             <source media="(max-width: 600px)" srcSet="/images/cabinets2-m.jpg" />
             <source media="(min-width: 601px)" srcSet="/images/cabinets2.jpg" />
             <img aria-hidden="true" loading="lazy" decoding="async" src="/images/cabinets2.jpg" alt="cabinets" width="400" height="662" />
-          </picture>
+          </motion.picture>
         </div>
       </section>
 
       <section id="sidebyside-reverse">
         <div className="container">
-          <div className="content">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="content">
             <h2 className="title">Extra content, maybe talk about a main service</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam debitis dolor consectetur dolorem inventore modi tenetur ex odit, amet beatae ad, doloribus tempora quae ab nulla minus temporibus at veritatis!
@@ -140,17 +172,27 @@ export default function Home() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe laborum nam consequuntur porro inventore odio? Quod autem alias ratione cum reiciendis qui quaerat, sequi voluptatum voluptatibus, iusto itaque sed ullam. Quis, maiores corrupti. Rerum quo laudantium vero magnam tempora!
             </p>
             <Link className="button-solid" href="/contact">Get Free Quote</Link>
-          </div>
-          <picture className="image-box">
+          </motion.div>
+          <motion.picture
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="image-box">
             <source media="(max-width: 600px)" srcSet="/images/cabinets2-m.jpg" />
             <source media="(min-width: 601px)" srcSet="/images/cabinets2.jpg" />
             <img aria-hidden="true" loading="lazy" decoding="async" src="/images/cabinets2.jpg" alt="cabinets" width="400" height="662" />
-          </picture>
+          </motion.picture>
         </div>
       </section>
 
 
-      <section id="cta">
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        id="cta">
         <div className="container">
           <h2 className="title">Get It Done <br /> With Us Today</h2>
           <p>
@@ -163,7 +205,7 @@ export default function Home() {
           <source media="(min-width: 601px)" srcSet="/images/cabinets2.jpg" />
           <img aria-hidden="true" loading="lazy" decoding="async" src="/images/cabinets2.jpg" alt="kitchen cabinets" width="1920" height="1280" />
         </picture>
-      </section>
+      </motion.section>
     </main>
   );
 }
