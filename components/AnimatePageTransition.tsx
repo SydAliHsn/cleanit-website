@@ -48,7 +48,7 @@ const AnimatePageTransition = (props: PropsWithChildren<{}>) => {
                 animate={{ height: "0vh" }}
                 exit={{ height: "100vh" }}
             >
-                <LogoLight style={{ maxHeight: '100%', padding: '2rem' }} />
+                <LogoLight style={{ maxHeight: '100%', maxWidth: '100%', padding: '2em' }} />
             </motion.div>
 
             <motion.div
@@ -65,7 +65,7 @@ const AnimatePageTransition = (props: PropsWithChildren<{}>) => {
                 initial={{ height: "100vh" }}
                 animate={{ height: "0vh", transition: { delay: 0.2 } }}
             >
-                <LogoLight style={{ maxHeight: '100%', padding: '2rem' }} />
+                <LogoLight style={{ maxHeight: '100%', maxWidth: '100%', padding: '2em' }} />
             </motion.div>
             <FrozenRouter>
                 {props.children}
