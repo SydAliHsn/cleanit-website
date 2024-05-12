@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.scss";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import AnimatePageTransition from "@/components/AnimatePageTransition";
 
-const roboto = Roboto({ subsets: ['latin'], weight: ['300', '400', '500', '700', '900'] });
+const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '700', '900'] });
 
 export const metadata: Metadata = {
   title: "CleanIt Qatar",
@@ -19,14 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
-        <AnimatePageTransition> {/* Comment this when in development */}
+      <body className={poppins.className}>
+        <AnimatePageTransition>
 
           <Header />
           {children}
           <Footer />
 
-        </AnimatePageTransition> {/* Comment this when in development */}
+        </AnimatePageTransition>
       </body>
     </html>
   );
