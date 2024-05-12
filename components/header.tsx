@@ -24,7 +24,6 @@ const links = [
 const Header = (props: {}): JSX.Element => {
     const [navState, setNavState] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
-    const [body, setBody] = useState<null | HTMLBodyElement>(null);
     const pathname = usePathname();
 
     // For Sticky Nav
@@ -45,25 +44,28 @@ const Header = (props: {}): JSX.Element => {
 
     // For Dark Mode
     useEffect(() => {
-        if (localStorage.getItem('darkMode') === 'enabled')
-            enableDarkMode();
-        else
-            disableDarkMode();
+        const body = document.querySelector('body');
 
-        setBody(document.querySelector('body'));
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body?.classList.add('dark-mode');
+            setDarkMode(true);
+        } else {
+            body?.classList.remove('dark-mode');
+            setDarkMode(false);
+        }
     }, []);
 
     // Adding this so the "active" link is updated every time the pathname changes.
     useEffect(() => { }, [pathname]);
 
     const enableDarkMode = () => {
-        body?.classList.add('dark-mode');
+        // body?.classList.add('dark-mode');
         localStorage.setItem('darkMode', 'enabled');
         setDarkMode(true);
     };
 
     const disableDarkMode = () => {
-        body?.classList.remove('dark-mode');
+        // body?.classList.remove('dark-mode');
         localStorage.setItem('darkMode', '');
         setDarkMode(false);
     };
