@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, Spring } from "framer-motion";
 import { PropsWithChildren } from "react";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useEffect } from "react";
 import LogoLight from "./svg/logo-light";
 
 function FrozenRouter(props: PropsWithChildren<{}>) {
@@ -29,7 +29,10 @@ const AnimatePageTransition = (props: PropsWithChildren<{}>) => {
         damping: 10,
     };
 
-    const transitionColor = localStorage.getItem('darkMode') === 'enabled' ? "var(--primaryDark)" : "var(--primary)";
+    let transitionColor;
+    useEffect(() => {
+        transitionColor = localStorage.getItem('darkMode') === 'enabled' ? "var(--primaryDark)" : "var(--primary)";
+    }, []);
 
     return <AnimatePresence initial={true} mode="wait">
         <motion.div key={pathname}>
