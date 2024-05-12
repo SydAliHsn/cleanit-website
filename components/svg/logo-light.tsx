@@ -1,4 +1,4 @@
-export default function ({ className, style }: { className?: string, style?: React.CSSProperties }) {
+export default function LogoLight({ className, style }: { className?: string, style?: React.CSSProperties }) {
 
 
     return <svg
