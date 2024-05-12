@@ -59,29 +59,45 @@
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           width: 100%;
-          gap: 0.625em;
+          gap: 0.5em;
           margin-top: 1em;
 
           &__service {
             position: relative;
             margin-right: 1.25em;
             height: 8rem;
-            background: var(--primary);
-            border-radius: 1em;
+            background: white;
+            border-radius: 0.4em;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
             box-sizing: content-box;
             border: rgb(153, 153, 153) 0.2em solid;
+            pointer-events: visible;
 
             &:hover {
+              border-color: var(--primary);
               img {
                 transform: scale(1.05);
               }
             }
 
+            p {
+              font-size: 1.3em;
+              color: #414141;
+              font-weight: 600;
+              position: absolute;
+              bottom: 5px;
+              margin-bottom: 0;
+              line-height: 1;
+              font-family: 'Poppins', sans-serif;
+              text-align: center;
+              width: 100%;
+            }
+
             img {
               transition: all 0.2s ease-in-out;
               padding: 1em;
+              padding-bottom: 2em;
             }
 
             .checkbox {
@@ -89,11 +105,15 @@
               height: 25px;
               border-radius: 50%;
               vertical-align: middle;
-              border: 1px solid black;
+              border: 2px solid var(--primaryDark);
               appearance: none;
               -webkit-appearance: none;
               outline: none;
               cursor: pointer;
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              z-index: 1;
 
               &:checked {
                 appearance: auto;
@@ -120,6 +140,10 @@
             border: none;
             border-bottom: 0.0625em solid #d4d4d4;
             background: transparent;
+
+            &:focus {
+              padding-left: 1.25em;
+            }
           }
         }
 
@@ -129,6 +153,10 @@
           border: none;
           border-bottom: 0.0625em solid #d4d4d4;
           background: transparent;
+
+          &:focus {
+            padding-left: 1.25em;
+          }
         }
 
         input:focus {
@@ -145,7 +173,7 @@
         ::-ms-input-placeholder,
         ::placeholder {
           color: #d4d4d4;
-          font-family: 'Roboto', sans-serif;
+          // font-family: 'Poppins', sans-serif;
         }
       }
 

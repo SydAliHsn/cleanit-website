@@ -1,7 +1,28 @@
+'use client';
+
 import { NextPage } from 'next';
 import Image from 'next/image';
 
+import { useState } from 'react';
+
+const services = [
+    {
+        name: 'Car Wash',
+        image: '/images/car-wash.svg'
+    },
+    {
+        name: 'Home Cleaning',
+        image: '/images/home-cleaning.svg'
+    },
+    {
+        name: 'Carpet Cleaning',
+        image: '/images/carpet-cleaning.svg'
+    }
+];
+
 const Page: NextPage = (props: {}) => {
+    const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
     return <main id="main">
 
         <section id="int-hero">
@@ -40,24 +61,28 @@ const Page: NextPage = (props: {}) => {
                         <input id="location" aria-label="location" className="input1 right" name="location" placeholder="Your Location" type="text" tabIndex={4} required />
                         <div aria-hidden="true" className="hover-box"></div>
                     </div>
-                    {/* <div className="input-group">
-                        <label htmlFor="how">How did you hear about us</label>
-                        <input id="how" aria-label="how did you hear about us" name="hear" placeholder="How Did You Hear About Us" type="text" tabIndex={5} required />
-                        <div aria-hidden="true" className="hover-box"></div>
-                    </div> */}
                     <div className="input-group">
-                        <label htmlFor="service">Service Needed</label>
+                        <label htmlFor="service">Service(s) Needed</label>
                         <div className='service-selection'>
-                            <button type='button' className='service-selection__service'>
-                                <input className='checkbox' type="checkbox" checked />
-                                <Image fill={true} src="/images/car-wash.svg" alt="car wash" />
-                            </button>
-                            <button type='button' className='service-selection__service'>
-                                <Image fill={true} src="/images/home-cleaning.svg" alt="car wash" />
-                            </button>
-                            <button type='button' className='service-selection__service'>
-                                <Image fill={true} src="/images/carpet-cleaning.svg" alt="car wash" />
-                            </button>
+                            {services.map(({ name, image }) => {
+                                const checked = selectedServices.find(val => val === name) === name;
+
+                                return <button
+                                    onClick={() =>
+                                        setSelectedServices(checked ?
+                                            selectedServices.filter(val => val !== name) :
+                                            [...selectedServices, name])}
+
+                                    key={name} type='button' className='service-selection__service'>
+
+                                    <input className='checkbox' type="checkbox"
+                                        checked={checked} />
+
+                                    <Image fill={true} src={image} alt={name} />
+                                    <p>{name}</p>
+                                </button>
+                            })
+                            }
                         </div>
                     </div>
                     <div aria-hidden="true" className="hover-box"></div>
