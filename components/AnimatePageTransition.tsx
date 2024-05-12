@@ -29,46 +29,30 @@ const AnimatePageTransition = (props: PropsWithChildren<{}>) => {
         damping: 10,
     };
 
-    const transitionColor = "var(--primary)";
-
     return <AnimatePresence initial={true} mode="wait">
         <motion.div key={pathname}>
             <motion.div
-                style={{
-                    backgroundColor: transitionColor,
-                    position: "fixed",
-                    width: "100vw",
-                    zIndex: 999999,
-                    display: 'grid',
-                    placeItems: 'center',
-                    bottom: 0,
-                }}
+                className="page-transition-screen"
                 transition={transitionSpringPhysics}
                 animate={{ height: "0vh" }}
                 exit={{ height: "100vh" }}
             >
-                <LogoLight style={{ maxHeight: '100%', maxWidth: '100%', padding: '2em' }} />
+                <LogoLight />
             </motion.div>
 
             <motion.div
-                style={{
-                    backgroundColor: transitionColor,
-                    position: "fixed",
-                    width: "100vw",
-                    zIndex: 999999,
-                    display: 'grid',
-                    placeItems: 'center',
-                    top: 0,
-                }}
+                className="page-transition-screen"
                 transition={transitionSpringPhysics}
                 initial={{ height: "100vh" }}
                 animate={{ height: "0vh", transition: { delay: 0.2 } }}
             >
-                <LogoLight style={{ maxHeight: '100%', maxWidth: '100%', padding: '2em' }} />
+                <LogoLight />
             </motion.div>
+
             <FrozenRouter>
                 {props.children}
             </FrozenRouter>
+
         </motion.div>
     </AnimatePresence>
 };

@@ -1,0 +1,19 @@
+.page-transition-screen {
+  background: var(--primary);
+  position: fixed;
+  width: 100vw;
+  z-index: 999999;
+  display: grid;
+  place-items: center;
+  bottom: 0;
+
+  svg {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 2em;
+  }
+}
+
+.dark-mode .page-transition-screen {
+  background: var(--primaryDark) !important;
+}
