@@ -31,7 +31,7 @@ const AnimatePageTransition = (props: PropsWithChildren<{}>) => {
 
     const transitionColor = "deepskyblue";
 
-    return <AnimatePresence initial={false} mode="wait">
+    return <AnimatePresence initial={true} mode="wait">
         <motion.div key={pathname}>
             <motion.div
                 style={{
