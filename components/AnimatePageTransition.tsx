@@ -5,7 +5,7 @@ import { motion, AnimatePresence, Spring } from "framer-motion";
 import { PropsWithChildren } from "react";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useContext, useRef } from "react";
-
+import Image from "next/image";
 
 function FrozenRouter(props: PropsWithChildren<{}>) {
     const context = useContext(LayoutRouterContext);
@@ -44,7 +44,9 @@ const AnimatePageTransition = (props: PropsWithChildren<{}>) => {
                 transition={transitionSpringPhysics}
                 animate={{ height: "0vh" }}
                 exit={{ height: "100vh" }}
-            />
+            >
+                <Image fill={true} src={'/images/logo-light.svg'} alt="CleanIt" />
+            </motion.div>
 
             <motion.div
                 style={{
@@ -57,7 +59,9 @@ const AnimatePageTransition = (props: PropsWithChildren<{}>) => {
                 transition={transitionSpringPhysics}
                 initial={{ height: "100vh" }}
                 animate={{ height: "0vh", transition: { delay: 0.2 } }}
-            />
+            >
+                <Image fill={true} src={'/images/logo-light.svg'} alt="CleanIt" />
+            </motion.div>
             <FrozenRouter>
                 {props.children}
             </FrozenRouter>
