@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const links = [
     {
@@ -77,10 +78,10 @@ const Header = (props: {}): JSX.Element => {
             {/* <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version--> */}
             <Link className="logo" aria-label="click to go to home page" href="/">
                 {/* <!--Light Colored Logo, remove .dark image tag and the .light class if you don't have a dark and light version --> */}
-                <img className="light" aria-hidden="true" src="/images/logo-light.svg" decoding="async" alt="logo" width="221" height="66" />
+                <Image className="light" aria-hidden="true" src="/images/logo-light.svg" decoding="async" alt="CleanIt" width="221" height="66" />
 
                 {/* <!--Dark Colored Logo--> */}
-                <img className="dark" aria-hidden="true" src="/images/logo-blue.svg" decoding="async" loading="lazy" alt="logo" width="221" height="66" />
+                <Image className="dark" aria-hidden="true" src="/images/logo-blue.svg" decoding="async" loading="lazy" alt="CleanIt" width="221" height="66" />
             </Link>
 
             {/* <!--Main Nav--> */}
