@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.scss";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import AnimatePageTransition from "@/components/AnimatePageTransition";
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['300', '400', '500', '700', '900'] });
 
@@ -19,9 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Header />
-        {children}
-        <Footer />
+        <AnimatePageTransition> {/* Comment this when in development */}
+
+          <Header />
+          {children}
+          <Footer />
+
+        </AnimatePageTransition> {/* Comment this when in development */}
       </body>
     </html>
   );
