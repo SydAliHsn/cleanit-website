@@ -55,6 +55,55 @@
         flex-direction: column;
         margin-bottom: 1.875em;
 
+        .service-selection {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          width: 100%;
+          gap: 0.625em;
+          margin-top: 1em;
+
+          &__service {
+            position: relative;
+            margin-right: 1.25em;
+            height: 8rem;
+            background: var(--primary);
+            border-radius: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-sizing: content-box;
+            border: rgb(153, 153, 153) 0.2em solid;
+
+            &:hover {
+              img {
+                transform: scale(1.05);
+              }
+            }
+
+            img {
+              transition: all 0.2s ease-in-out;
+              padding: 1em;
+            }
+
+            .checkbox {
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              vertical-align: middle;
+              border: 1px solid black;
+              appearance: none;
+              -webkit-appearance: none;
+              outline: none;
+              cursor: pointer;
+
+              &:checked {
+                appearance: auto;
+                clip-path: circle(50% at 50% 50%);
+                background-color: black;
+              }
+            }
+          }
+        }
+
         label {
           font-weight: bold;
           font-size: 1em;

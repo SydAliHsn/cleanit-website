@@ -30,7 +30,7 @@ const AnimatePageTransition = (props: PropsWithChildren<{}>) => {
         damping: 10,
     };
 
-    const transitionColor = "deepskyblue";
+    const transitionColor = localStorage.getItem('darkMode') === 'enabled' ? "var(--primaryDark)" : "var(--primary)";
 
     return <AnimatePresence initial={true} mode="wait">
         <motion.div key={pathname}>

@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 
 const Page: NextPage = (props: {}) => {
     return <main id="main">
@@ -39,14 +40,30 @@ const Page: NextPage = (props: {}) => {
                         <input id="location" aria-label="location" className="input1 right" name="location" placeholder="Your Location" type="text" tabIndex={4} required />
                         <div aria-hidden="true" className="hover-box"></div>
                     </div>
-                    <div className="input-group">
+                    {/* <div className="input-group">
                         <label htmlFor="how">How did you hear about us</label>
                         <input id="how" aria-label="how did you hear about us" name="hear" placeholder="How Did You Hear About Us" type="text" tabIndex={5} required />
                         <div aria-hidden="true" className="hover-box"></div>
+                    </div> */}
+                    <div className="input-group">
+                        <label htmlFor="service">Service Needed</label>
+                        <div className='service-selection'>
+                            <button type='button' className='service-selection__service'>
+                                <input className='checkbox' type="checkbox" checked />
+                                <Image fill={true} src="/images/car-wash.svg" alt="car wash" />
+                            </button>
+                            <button type='button' className='service-selection__service'>
+                                <Image fill={true} src="/images/home-cleaning.svg" alt="car wash" />
+                            </button>
+                            <button type='button' className='service-selection__service'>
+                                <Image fill={true} src="/images/carpet-cleaning.svg" alt="car wash" />
+                            </button>
+                        </div>
                     </div>
+                    <div aria-hidden="true" className="hover-box"></div>
                     <div className="input-group textarea">
-                        <label htmlFor="message">Message</label>
-                        <textarea id="message" aria-label="write your message" name="message" placeholder="Tell us about what you need help with" tabIndex={6} required></textarea>
+                        <label htmlFor="message">Message (Optional)</label>
+                        <textarea id="message" aria-label="write your message" name="message" placeholder="Tell us more about what you need help with" tabIndex={6} required></textarea>
                         <div aria-hidden="true" className="hover-box"></div>
                     </div>
                     <p className="form-submit">
