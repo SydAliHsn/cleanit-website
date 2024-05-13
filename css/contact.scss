@@ -1,6 +1,7 @@
 /*-- -------------------------- -->
 <---           Form             -->
 <--- -------------------------- -*/
+
 /* Mobile */
 @media only screen and (min-width: 0em) {
   #form {
@@ -220,6 +221,40 @@
       }
     }
   }
+
+  .calendar {
+    border: 1px solid var(--primary);
+    border-radius: 0.5em;
+    max-width: 100%;
+
+    .Cal__Container__listWrapper {
+      border-radius: 0 0 0.5em 0.5em;
+    }
+
+    .Cal__Header__root {
+      border-radius: 0.5em 0.5em 0 0;
+    }
+
+    .Cal__Weekdays__root {
+      li {
+        color: white;
+      }
+    }
+  }
+
+  .dark-mode {
+    .calendar {
+      border-color: var(--primaryDark);
+
+      ul.Cal__Month__row {
+        background: var(--medium);
+        li {
+          background: var(--medium);
+          color: #fff;
+        }
+      }
+    }
+  }
 }
 
 /* Mobile Landscape */
@@ -270,6 +305,10 @@
         }
       }
     }
+  }
+
+  .calendar {
+    max-width: 40em;
   }
 }
 

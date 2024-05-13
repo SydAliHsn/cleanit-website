@@ -2,6 +2,7 @@
 
 import { NextPage } from 'next';
 import Image from 'next/image';
+import InfiniteCalendar from 'react-infinite-calendar';
 
 import { useState } from 'react';
 
@@ -36,7 +37,7 @@ const Page: NextPage = (props: {}) => {
 
         <section id="form">
             <div className="left-section">
-                <h2 className="title">Send a Message</h2>
+                <h2 className="title">Book an Appointment</h2>
                 <p>If you have any questions or concerns please feel free to reach out to us.  We respond to every call and email.</p>
                 <form id="contact" name="Contact Form2" method="post" data-netlify="true">
                     <div className="input-group">
@@ -61,6 +62,7 @@ const Page: NextPage = (props: {}) => {
                         <input id="location" aria-label="location" className="input1 right" name="location" placeholder="Your Location" type="text" tabIndex={4} required />
                         <div aria-hidden="true" className="hover-box"></div>
                     </div>
+
                     <div className="input-group">
                         <label htmlFor="service">Service(s) Needed</label>
                         <div className='service-selection'>
@@ -85,6 +87,20 @@ const Page: NextPage = (props: {}) => {
                             }
                         </div>
                     </div>
+
+                    <div className="input-group">
+                        <label htmlFor="Date">Pick a Day</label>
+                        <InfiniteCalendar
+                            className="calendar"
+                            // width={400}
+                            height={240}
+                            selected={new Date()}
+                            // disabledDays={[0]}
+                            layout="portrait"
+                        // minDate={lastWeek}
+                        />
+                    </div>
+
                     <div aria-hidden="true" className="hover-box"></div>
                     <div className="input-group textarea">
                         <label htmlFor="message">Message (Optional)</label>

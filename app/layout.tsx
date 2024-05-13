@@ -4,6 +4,7 @@ import "./globals.scss";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import AnimatePageTransition from "@/components/AnimatePageTransition";
+import 'react-infinite-calendar/styles.css'
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '700', '900'] });
 
