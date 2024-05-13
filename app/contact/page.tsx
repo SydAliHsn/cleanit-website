@@ -3,7 +3,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import InfiniteCalendar from 'react-infinite-calendar';
-
+import { Modal } from 'react-responsive-modal';
 import { useState, useEffect } from 'react';
 
 const services = [
@@ -23,6 +23,8 @@ const services = [
 
 const Page: NextPage = (props: {}) => {
     const [selectedServices, setSelectedServices] = useState<string[]>([]);
+    const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+    const [open, setOpen] = useState(true);
 
     // Scroll to top because the infinite calendar is doing something weird and scrolls itself into view.
     useEffect(() => {
@@ -40,6 +42,20 @@ const Page: NextPage = (props: {}) => {
         </section>
 
         <section id="form">
+
+            <Modal open={open} onClose={() => setOpen(false)} center
+                classNames={{ modal: 'modal', overlay: 'overlay', closeButton: 'close-btn' }}>
+                <h2>Appointed Created!</h2>
+                <p style={{ paddingTop: '1em' }}>
+                    We have received your request. We will reach out to you shortly to confirm your appointment. Thank you for choosing us!
+                </p>
+                <button
+                    onClick={() => setOpen(false)}
+                    className="button-solid" style={{
+                        marginTop: '2em', width: '100%'
+                    }}>Okay</button>
+            </Modal>
+
             <div className="left-section">
                 <h2 className="title">Book an Appointment</h2>
                 <p>If you have any questions or concerns please feel free to reach out to us.  We respond to every call and email.</p>
@@ -98,11 +114,13 @@ const Page: NextPage = (props: {}) => {
                             className="calendar"
                             // width={400}
                             height={240}
-                            selected={new Date()}
+                            selected={selectedDate}
                             // disabledDays={[0]}
                             layout="portrait"
                             // minDate={lastWeek}
                             minDate={new Date()}
+                            maxDate={new Date().getTime() + 30 * 24 * 60 * 60 * 1000}
+                            onSelect={(date: Date) => setSelectedDate(date)}
                         />
                     </div>
 
@@ -113,7 +131,7 @@ const Page: NextPage = (props: {}) => {
                         <div aria-hidden="true" className="hover-box"></div>
                     </div>
                     <p className="form-submit">
-                        <button name="submit" type="submit" id="contact-submit" className="button-solid" data-submit="...Sending">Submit</button>
+                        <button name="submit" type="submit" id="contact-submit" className="button-solid" data-submit="...Sending" onClick={() => setOpen(true)}>Submit</button>
                     </p>
                 </form>
             </div>

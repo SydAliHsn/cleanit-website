@@ -1,0 +1,19 @@
+.modal {
+  z-index: 1002;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.overlay {
+  z-index: 1001;
+}
+
+.dark-mode {
+  .modal {
+    background: var(--dark);
+
+    .close-btn {
+      fill: rgb(165, 165, 165);
+    }
+  }
+}
