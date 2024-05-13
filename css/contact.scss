@@ -149,6 +149,12 @@
           }
         }
 
+        input::placeholder {
+          color: #5f5f5f;
+
+          // font-family: 'Poppins', sans-serif;
+        }
+
         textarea {
           font-size: 1em;
           height: 4.1875em;
@@ -168,14 +174,10 @@
         textarea {
           min-height: 12.5em;
           padding-top: 1.25em;
-        }
 
-        ::-webkit-input-placeholder,
-        :-ms-input-placeholder,
-        ::-ms-input-placeholder,
-        ::placeholder {
-          color: #d4d4d4;
-          // font-family: 'Poppins', sans-serif;
+          &::placeholder {
+            color: #5f5f5f;
+          }
         }
       }
 
@@ -222,6 +224,7 @@
     }
   }
 
+  // Calendar
   .calendar {
     border: 1px solid var(--primary);
     border-radius: 0.5em;
@@ -244,22 +247,17 @@
 
   .dark-mode {
     .calendar {
-      border-color: var(--primaryDark);
+      .Cal__Month__row li {
+        color: #333;
+      }
 
-      ul.Cal__Month__row {
-        background: var(--medium);
-        li {
-          background: var(--medium);
-          color: #fff;
-        }
-
-        .Cal__Day__disabled {
-          color: gray;
-        }
+      .Cal__Day__disabled {
+        color: #aaa !important;
       }
     }
   }
 }
+// Calendar
 
 /* Mobile Landscape */
 @media only screen and (min-width: 568px) {
@@ -482,10 +480,19 @@
       textarea {
         color: #fff;
       }
-    }
 
-    .contact-right {
-      background: var(--medium);
+      input::placeholder {
+        color: rgb(173, 173, 173) !important;
+        opacity: 1;
+      }
+      textarea::placeholder {
+        opacity: 1;
+        color: rgb(173, 173, 173) !important;
+      }
+
+      .contact-right {
+        background: var(--medium);
+      }
     }
   }
 }
