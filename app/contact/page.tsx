@@ -24,7 +24,7 @@ const services = [
 const Page: NextPage = (props: {}) => {
     const [selectedServices, setSelectedServices] = useState<string[]>([]);
     const [selectedDate, setSelectedDate] = useState<Date>(new Date());
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     // Scroll to top because the infinite calendar is doing something weird and scrolls itself into view.
     useEffect(() => {
