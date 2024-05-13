@@ -49,26 +49,15 @@ const Header = (props: {}): JSX.Element => {
         if (localStorage.getItem('darkMode') === 'enabled') {
             body?.classList.add('dark-mode');
             setDarkMode(true);
+
         } else {
             body?.classList.remove('dark-mode');
             setDarkMode(false);
         }
-    }, []);
+    }, [darkMode]);
 
     // Adding this so the "active" link is updated every time the pathname changes.
     useEffect(() => { }, [pathname]);
-
-    const enableDarkMode = () => {
-        // body?.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'enabled');
-        setDarkMode(true);
-    };
-
-    const disableDarkMode = () => {
-        // body?.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', '');
-        setDarkMode(false);
-    };
 
     return <div id="navigation">
         <div aria-hidden="true" className="background-color-div">
@@ -96,11 +85,8 @@ const Header = (props: {}): JSX.Element => {
 
             {/* <!--Dark Mode toggle--> */}
             <button id="dark-mode-toggle" onClick={() => {
-                if (darkMode) {
-                    disableDarkMode();
-                } else {
-                    enableDarkMode();
-                }
+                localStorage.setItem('darkMode', darkMode ? 'disabled' : 'enabled');
+                setDarkMode(!darkMode)
             }}>
                 {/* <!--Moon is an inline SVG so you can edit the color if needed--> */}
                 <svg className="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480"
