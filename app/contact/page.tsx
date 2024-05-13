@@ -4,7 +4,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import InfiniteCalendar from 'react-infinite-calendar';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const services = [
     {
@@ -24,8 +24,12 @@ const services = [
 const Page: NextPage = (props: {}) => {
     const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
-    return <main id="main">
+    // Scroll to top because the infinite calendar is doing something weird and scrolls itself into view.
+    useEffect(() => {
+        document.documentElement.scrollTop = 0;
+    }, []);
 
+    return <main id="main">
         <section id="int-hero">
             <h1 id="home-h">Contact Us</h1>
             <picture>
@@ -97,7 +101,8 @@ const Page: NextPage = (props: {}) => {
                             selected={new Date()}
                             // disabledDays={[0]}
                             layout="portrait"
-                        // minDate={lastWeek}
+                            // minDate={lastWeek}
+                            minDate={new Date()}
                         />
                     </div>
 
