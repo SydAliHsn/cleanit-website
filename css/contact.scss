@@ -59,13 +59,13 @@
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           width: 100%;
-          gap: 0.5em;
+          gap: 1em;
           margin-top: 1em;
 
           &__service {
             position: relative;
             margin-right: 1.25em;
-            height: 8rem;
+            height: 6.75em;
             background: white;
             border-radius: 0.4em;
             cursor: pointer;
@@ -73,6 +73,7 @@
             box-sizing: content-box;
             border: rgb(153, 153, 153) 0.2em solid;
             pointer-events: visible;
+            margin: 0;
 
             &:hover {
               border-color: var(--primary);
@@ -82,11 +83,11 @@
             }
 
             p {
-              font-size: 1.3em;
+              font-size: 1em;
               color: #414141;
               font-weight: 600;
               position: absolute;
-              bottom: 5px;
+              bottom: 3px;
               margin-bottom: 0;
               line-height: 1;
               font-family: 'Poppins', sans-serif;
@@ -96,13 +97,13 @@
 
             img {
               transition: all 0.2s ease-in-out;
-              padding: 1em;
+              padding: 0.75em;
               padding-bottom: 2em;
             }
 
             .checkbox {
-              width: 25px;
-              height: 25px;
+              width: 18px;
+              height: 18px;
               border-radius: 50%;
               vertical-align: middle;
               border: 2px solid var(--primaryDark);
@@ -111,8 +112,8 @@
               outline: none;
               cursor: pointer;
               position: absolute;
-              top: 10px;
-              right: 10px;
+              top: 6px;
+              right: 6px;
               z-index: 1;
 
               &:checked {
@@ -226,6 +227,27 @@
   #form {
     #contact {
       max-width: 43.75em;
+
+      .input-group {
+        .service-selection {
+          gap: 1.5em;
+
+          &__service {
+            height: 8.75em;
+          }
+
+          p {
+            font-size: 1.25em;
+          }
+
+          .checkbox {
+            width: 25px;
+            height: 25px;
+            top: 9px;
+            right: 9px;
+          }
+        }
+      }
     }
 
     .contact-right {
