@@ -252,6 +252,10 @@
           background: var(--medium);
           color: #fff;
         }
+
+        .Cal__Day__disabled {
+          color: gray;
+        }
       }
     }
   }
