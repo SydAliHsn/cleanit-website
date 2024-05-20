@@ -45,7 +45,7 @@ const Page: NextPage = (props: {}) => {
 
             <Modal open={open} onClose={() => setOpen(false)} center
                 classNames={{ modal: 'modal', overlay: 'overlay', closeButton: 'close-btn' }}>
-                <h2>Appointed Created!</h2>
+                <h2>Appointment Created!</h2>
                 <p style={{ paddingTop: '1em' }}>
                     We have received your request. We will reach out to you shortly to confirm your appointment. Thank you for choosing us!
                 </p>
