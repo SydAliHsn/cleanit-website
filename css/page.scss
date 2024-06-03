@@ -145,6 +145,25 @@
 <--- -------------------------- -*/
 /* Mobile */
 @media only screen and (min-width: 0em) {
+  .service-modal {
+    p,
+    li {
+      font-size: 1em;
+    }
+
+    .btn-container {
+      margin-top: 2em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      .button-solid {
+        font-size: 0.75em;
+        box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
   .services {
     border-radius: 0.3125em;
     margin: auto;
@@ -215,14 +234,30 @@
 
 /* Inbetween */
 @media only screen and (min-width: 768px) {
+  .service-modal {
+    p,
+    li {
+      font-size: 1.125em;
+    }
+
+    .btn-container {
+      .button-solid {
+        font-size: 0.875em;
+      }
+    }
+  }
+
   .services {
     font-size: min(1.8vw, 1em);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: center;
+    // justify-content: space-between;
+    gap: 2.75em;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
@@ -231,6 +266,19 @@
     .card {
       margin: 0;
       max-width: 20.3125em;
+
+      .read-more {
+        color: var(--primaryDark);
+        padding-left: 0.5em;
+        font-weight: 700;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        .read-more {
+          color: var(--primary);
+        }
+      }
     }
   }
 }
