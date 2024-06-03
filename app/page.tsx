@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from 'framer-motion';
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
@@ -26,51 +27,7 @@ export default function Home() {
         </picture>
       </section>
 
-      <section id="services" className="services">
-        {/* <!-- Get Icons From flaticon.com --> */}
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true, amount: 0.4 }}
-          className="card">
-          <picture>
-            <img aria-hidden="true" decoding="async" src="/images/service1.svg" alt="appliance" width="48" height="48" />
-          </picture>
-          <h2>Service 1</h2>
-          <p>
-            Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true, amount: 0.4 }}
-          className="card">
-          <picture>
-            <img aria-hidden="true" decoding="async" src="/images/service2.svg" alt="appliance" width="48" height="48" />
-          </picture>
-          <h2>Service 2</h2>
-          <p>
-            Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true, amount: 0.4 }}
-          className="card">
-          <picture>
-            <img aria-hidden="true" decoding="async" src="/images/service3.svg" alt="appliance" width="48" height="48" />
-          </picture>
-          <h2>Service 3</h2>
-          <p>
-            Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.
-          </p>
-        </motion.div>
-      </section>
+      <Services />
 
       {/* <!-- ============================================ -->
             <!--                   About                      -->
