@@ -69,6 +69,10 @@
     overflow-x: hidden;
   }
 
+  button {
+    all: unset;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -696,6 +700,19 @@
 <--- -------------------------- -*/
 /* Mobile */
 @media only screen and (min-width: 0em) {
+  #navbar-menu ul li .button-solid {
+    transition: all 0.2s !important;
+    color: #fff !important;
+
+    &::before {
+      display: none !important;
+    }
+
+    &:hover {
+      scale: 0.975;
+    }
+  }
+
   #int-hero {
     display: -webkit-box;
     display: -ms-flexbox;
