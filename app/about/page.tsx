@@ -29,12 +29,12 @@ const About: NextPage = (props: {}) => {
                     className="content">
                     <h2 className="title">Safest and reliable cleaning for all your needs</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam debitis dolor consectetur dolorem inventore modi tenetur ex odit, amet beatae ad, doloribus tempora quae ab nulla minus temporibus at veritatis!
+                        Welcome to CleanIt, your trusted partner for professional cleaning services in Qatar. We specialize in a wide range of cleaning solutions, including house cleaning, mattress cleaning, curtain dry cleaning, sofa cleaning, and comprehensive car wash services.
                     </p>
-                    <p>
+                    {/* <p>
                         <strong>Why choose us:</strong>
-                    </p>
-                    <ul>
+                    </p> */}
+                    {/* <ul>
                         <li>
                             <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20" />
                             <span>List item about something, this one is going to two lines so you can see what it looks like</span>
@@ -55,11 +55,14 @@ const About: NextPage = (props: {}) => {
                             <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20" />
                             <span>List item about something</span>
                         </li>
-                    </ul>
+                    </ul> */}
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe laborum nam consequuntur porro inventore odio? Quod autem alias ratione cum reiciendis qui quaerat, sequi voluptatum voluptatibus, iusto itaque sed ullam. Quis, maiores corrupti. Rerum quo laudantium vero magnam tempora!
+                        At CleanIt, we pride ourselves on our attention to detail, commitment to quality, and exceptional customer service. Our experienced and reliable team uses the latest cleaning techniques and high-quality products to ensure your home and vehicles are spotless and hygienic.
                     </p>
-                    <Link className="button-solid" href="/about">Book Appointment</Link>
+
+                    <p>Whether you need a quick clean-up or a thorough deep clean, CleanIt offers flexible and affordable services tailored to meet your specific needs. Experience the difference with CleanIt – <i style={{ textDecoration: 'italic' }}>where cleanliness meets excellence</i>.</p>
+
+                    <Link className="button-solid" href="/contact">Book Appointment</Link>
                 </motion.div>
                 <motion.picture
                     initial={{ opacity: 0, x: -100 }}
