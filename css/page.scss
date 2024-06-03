@@ -164,6 +164,22 @@
     }
   }
 
+  .dark-mode {
+    .services {
+      .card {
+        .read-more {
+          color: var(--primary);
+        }
+
+        &:hover {
+          .read-more {
+            color: rgb(0, 247, 255);
+          }
+        }
+      }
+    }
+  }
+
   .services {
     border-radius: 0.3125em;
     margin: auto;
