@@ -186,6 +186,19 @@
       margin: auto;
       margin-bottom: 3.125em;
 
+      .read-more {
+        color: var(--primaryDark);
+        padding-left: 0.5em;
+        font-weight: 700;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        .read-more {
+          color: var(--primary);
+        }
+      }
+
       &:last-of-type {
         margin-bottom: 0;
       }
@@ -266,19 +279,6 @@
     .card {
       margin: 0;
       max-width: 20.3125em;
-
-      .read-more {
-        color: var(--primaryDark);
-        padding-left: 0.5em;
-        font-weight: 700;
-        transition: color 0.3s;
-      }
-
-      &:hover {
-        .read-more {
-          color: var(--primary);
-        }
-      }
     }
   }
 }
