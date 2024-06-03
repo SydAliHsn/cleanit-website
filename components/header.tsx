@@ -80,7 +80,12 @@ const Header = (props: {}): JSX.Element => {
                 <ul>
                     {links.map(({ name, link }) =>
                         <li key={link}><Link className={pathname === link ? 'active' : ''} href={link}>{name}</Link></li>)}
+
+                    <li>
+                        <Link href={'/contact'} style={{ padding: '1rem 1.1rem', fontSize: '1.1rem', height: 'auto', lineHeight: '1' }} className="button-solid">Book Now</Link>
+                    </li>
                 </ul>
+
             </nav>
 
             {/* <!--Dark Mode toggle--> */}
