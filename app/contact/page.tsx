@@ -18,7 +18,19 @@ const services = [
     {
         name: 'Carpet Cleaning',
         image: '/images/carpet-cleaning.svg'
-    }
+    },
+    {
+        name: 'Mattress & Sofa Cleaning',
+        image: '/images/sofa-cleaning.svg'
+    },
+    {
+        name: 'Curtain Cleaning',
+        image: '/images/curtain-cleaning.svg'
+    },
+    {
+        name: 'Monthly Contracts',
+        image: '/images/monthly-contracts.svg'
+    },
 ];
 
 const Page: NextPage = (props: {}) => {
@@ -138,20 +150,20 @@ const Page: NextPage = (props: {}) => {
             <div className="contact-right">
                 <div className="info-group">
                     <span className="heading">Location</span>
-                    <span className="info">Denver, CO</span>
+                    <span className="info">Qatar</span>
                 </div>
                 <div className="info-group">
                     <span className="heading">Phone</span>
-                    <a className="info" href="tel:555-779-4407">(555) 779-4407</a>
+                    <a className="info" href="tel:+97451051323">+974 5105 1323</a>
                 </div>
-                <div className="info-group">
+                {/* <div className="info-group">
                     <span className="heading">Email</span>
                     <a className="info" href="mailto:email@email.com">Click to Email</a>
-                </div>
-                <div className="info-group">
+                </div> */}
+                {/* <div className="info-group">
                     <span className="heading">Hours</span>
                     <span className="info last">Mon to Fri: 8am to 6pm</span>
-                </div>
+                </div> */}
             </div>
         </section>
 
